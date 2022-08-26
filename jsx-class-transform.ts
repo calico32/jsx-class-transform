@@ -2,6 +2,7 @@
 import type { NodePath, PluginObj } from '@babel/core'
 // @ts-ignore - peer dependency
 import type { JSXElement } from '@babel/types'
+import { BabelStubs } from './babel-stubs'
 
 export const transformClasses = (className: string): string[] => {
   const lines = className

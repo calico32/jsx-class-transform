@@ -1,2 +1,2 @@
-import jsxClassTransform from './dist/jsx-class-transform'
+import jsxClassTransform from './dist/esm/jsx-class-transform'
 export default jsxClassTransform

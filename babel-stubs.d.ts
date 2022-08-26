@@ -1,4 +1,4 @@
-declare namespace BabelStubs {
+export namespace BabelStubs {
   type BabelFile = unknown
 
   type VisitNode<S, P extends Node> = VisitNodeFunction<S, P> | VisitNodeObject<S, P>

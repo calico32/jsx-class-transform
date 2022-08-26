@@ -1,12 +1,17 @@
 {
   "name": "jsx-class-transform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "exports": {
     "import": "./esm.js",
     "require": "./cjs.js"
   },
-  "types": "./dist/jsx-class-transform.d.ts",
+  "types": "./dist/esm/jsx-class-transform.d.ts",
+  "scripts": {
+    "build": "yarn esm && yarn cjs",
+    "esm": "tsc --target es2020 --lib esnext --declaration --sourceMap --module es2020 --outDir dist/esm jsx-class-transform.ts",
+    "cjs": "tsc --target es2020 --lib esnext --declaration --sourceMap --module commonjs --outDir dist/cjs jsx-class-transform.ts"
+  },
   "peerDependencies": {
     "@babel/core": "*",
     "@babel/types": "*"
