@@ -1,0 +1,17 @@
+{
+  "name": "jsx-class-transform",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/jsx-class-transform.js"
+  },
+  "types": "./dist/jsx-class-transform.d.ts",
+  "peerDependencies": {
+    "@babel/core": "*",
+    "@babel/types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}

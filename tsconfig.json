@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "node16",
+    "target": "es2020",
+    "lib": ["esnext"],
+    "module": "es2020",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true
+  }
+}
