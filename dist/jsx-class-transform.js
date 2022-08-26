@@ -1,7 +1,7 @@
 export const transformClasses = (className) => {
     const lines = className
         .split('\n')
-        .map((line) => line.trim().split('//')[0].split('#')[0])
+        .map((line) => line.trim().split('//')[0])
         .filter((line) => !!line);
     let classes = [];
     for (const line of lines) {
@@ -14,7 +14,10 @@ const jsxClassTransform = () => ({
     name: 'jsx-class-transform',
     visitor: {
         JSXElement(path) {
-            const attr = path.node.openingElement.attributes.find((attr) => 'name' in attr && (attr.name.name.name ?? attr.name.name) === 'class');
+            const attr = path.node.openingElement.attributes.find((attr) => {
+                const attrName = attr.name?.name?.name ?? attr.name?.name;
+                return attrName === 'class' || attrName === 'className';
+            });
             if (!attr || !('name' in attr))
                 return;
             const { value: node } = attr;
